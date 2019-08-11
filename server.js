@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
+const routes = require("./routes");
 const app = express();
 
 // Define middleware here
