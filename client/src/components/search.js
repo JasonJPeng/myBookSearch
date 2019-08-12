@@ -26,9 +26,19 @@ class Search extends Component {
 
     handleSave = (event) => {
         event.preventDefault();
-        let value = event.target.getAttribute("name")
-       alert("hhhh=> " + value )
-       console.log(this.state.books[value])
+        let ind = event.target.getAttribute("name")
+       API.saveBook(this.state.books[ind])
+       console.log(this.state.books[ind])
+    }
+
+    handleMyBooks = (event) => {
+        event.preventDefault();
+        API.getSavedBooks().then(res=>{
+            let items = res.data.map(x=>x.item)
+            console.log(items)
+            this.setState({books: items})
+        })
+
     }
 
     render() {
@@ -38,7 +48,8 @@ class Search extends Component {
                 <input name = "title" type="text" onChange={this.handleInput}></input>
                 <p>Author:</p>
                 <input name="author" type="text" onChange={this.handleInput}></input>
-                <button type="button" onClick={this.handleSubmit}>submit</button>
+                <button type="button" onClick={this.handleSubmit}>Search Google</button>
+                <button type="button" onClick={this.handleMyBooks}>My Saved Books</button>
 
                 <div id="display">
                     {this.state.books.map((x, ind)=> (<div>

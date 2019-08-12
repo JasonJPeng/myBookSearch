@@ -12,6 +12,12 @@ export default {
     let apiUrl = gBookUrl+title+ (author? "+inauthor:"+author: "" ); 
     console.log(apiUrl);
     return axios.get(apiUrl);
+  },
+  saveBook: function(bookData) {
+      return axios.post("/api/books", bookData);
+  },
+  getSavedBooks: function() {
+      return axios.get("/api/books")
   }
 };  
 //   // Gets the book with the given id
