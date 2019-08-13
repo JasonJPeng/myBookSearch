@@ -10,10 +10,7 @@ router.route("/books")
            id: req.body.id,
            title: req.body.volumeInfo.title,
            item: req.body
-        //    subtitle: req.body.volumeInfo.subtitle,
-        //    description: req.body.volumeInfo.description,
-        //    thumbnail: req.body.volumeInfo.imageLinks.thumbnail,
-        //    preview: req.body.volumeInfo.previewLink,
+      
        }).then(function(data){
            console.log("Done===>", data)
        })
@@ -24,7 +21,15 @@ router.route("/books")
      db.Book.find({}).then(function(data){
          res.json(data);
      })
-  }) 
+  })
+
+router.route("/books/:id")
+  .delete(function(req,res) {
+      db.Book.remove({id:req.params.id}).then(function(data){
+          res.json(data)
+      })
+  })
+  
 
 // Matches with "/api/books/:id"
 // router

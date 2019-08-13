@@ -10,6 +10,17 @@ class xxx extends Component {
        API.saveBook(this.props.bookInfo)
     }
 
+    handleRemove = (event) => {
+        event.preventDefault();
+        let self = this;
+       API.removeBook(this.props.bookInfo.id).then(function(res){
+        
+              self.props.removeBookInfo();
+        
+           console.log(res.data);
+       })
+    }
+
     render() {
         return(
         <div>
@@ -19,7 +30,7 @@ class xxx extends Component {
                 <h3>{this.props.bookInfo.volumeInfo.subTitle}</h3> 
               
                 {this.props.onBookShelf?
-                <button onClick={this.handleRemove}>Remove from my bookshelf</button> :
+                <button onClick={this.handleRemove}>Remove from Bookshelf</button> :
                 <button onClick={this.handleSave}>Save to my bookshelf</button>
                 }
 

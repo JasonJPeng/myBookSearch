@@ -28,6 +28,12 @@ class App extends Component {
     this.setState({onBookShelf: bookshelf})
   }
 
+  removeBookInfo = () => {
+    let newBooks = this.state.books.filter(x=> x.id !== this.state.bookInfo.id) 
+    this.setState({bookInfo: {}})
+    this.setState({books: newBooks})
+  }
+
   render() {
     return (
       <div className="App">
@@ -42,7 +48,11 @@ class App extends Component {
        
         <Search updateBooks =  {this.updateBooks} updateStatus = {this.updateStatus}/>
         <Results bookList = {this.state.books} updateDetails = {this.updateDetails} />
-        <Details bookInfo = {this.state.bookInfo} onBookShelf = {this.state.onBookShelf}/>
+        <Details 
+            bookInfo = {this.state.bookInfo} 
+            onBookShelf = {this.state.onBookShelf}
+            removeBookInfo =  {this.removeBookInfo}     
+        />
         <Footer updateApp={this.setState} stateApp = {this.state} />
       </div>
     );
