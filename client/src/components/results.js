@@ -20,18 +20,19 @@ class xxx extends Component {
                    <h2> {this.props.bookList.length} books found in Google Books Search  </h2>
                 } 
             
-                    {this.props.bookList.map((x, ind)=> (<div>
-                        <button name={ind} onClick={this.handleDetails}>More ..</button>
+                    {this.props.bookList.map((x, ind)=> (<div key={ind.toString()}>
+                        <button name={ind.toString()} onClick={this.handleDetails}>details</button>
 
-                        {/* <img src={
-                            x.volumeInfo.imageLinks.smallThumbnail? x.volumeInfo.imageLinks.smallThumbnail: ""
-                            }/> */}
+                        {/* <img src=
+                            {x.volumeInfo.imageLinks.smallThumbnail? x.volumeInfo.imageLinks.smallThumbnail: ""}
+                             alt=""/> */}
 
   
-                        {x.volumeInfo.title} {x.volumeInfo.subtitle}
-                        author: {x.volumeInfo.authors.map(y=>(
-                            <div> {y} </div>
-                        ))} 
+                        {x.volumeInfo.title} 
+                        {/* {x.volumeInfo.subtitle} */}
+                        {/* author: {x.volumeInfo.authors.map((y, indY)=>(
+                            <div key={indY.toString() + x.id}> {y} </div>
+                        ))}  */}
                             <hr></hr>
                         </div>                        
                     ))}

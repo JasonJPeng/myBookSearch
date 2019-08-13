@@ -12,7 +12,7 @@ router.route("/books")
            item: req.body
       
        }).then(function(data){
-           console.log("Done===>", data)
+           res.json(data)
        })
        
   })

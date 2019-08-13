@@ -9,7 +9,7 @@ export default {
   getBooks: function(title, author) {
     title = title.trim().replace(" ", "%20");
     author = author.trim().replace(" ", "%20");  
-    let apiUrl = gBookUrl+title+ (author? "+inauthor:"+author: "" ); 
+    let apiUrl = gBookUrl+title+ (author? "+inauthor:"+author: "" ) + "&maxResults=40"; 
     console.log(apiUrl);
     return axios.get(apiUrl);
   },

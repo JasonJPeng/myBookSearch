@@ -21,12 +21,13 @@ class Search extends Component {
             console.log(res.data.items)        
             // self.setState({books: res.data.items, saved_mode: false})
             this.props.updateBooks(res.data.items)
+            this.props.updateSavedBooks(res.data.item)
             this.props.updateStatus(false)
         })
     }
 
 
-
+// should handle search here
     handleMyBooks = (event) => {
         event.preventDefault();
         API.getSavedBooks().then(res=>{
