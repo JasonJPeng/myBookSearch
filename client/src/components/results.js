@@ -15,7 +15,11 @@ class xxx extends Component {
         return(
             // <div>===== {this.props.bookList.length} =======</div>
             <div id="results">
-                <h2>Search Results</h2>
+                {this.props.onBookShelf?
+                   <h2> {this.props.bookList.length} books in my bookshelf</h2> :
+                   <h2> {this.props.bookList.length} books found in Google Books Search  </h2>
+                } 
+            
                     {this.props.bookList.map((x, ind)=> (<div>
                         <button name={ind} onClick={this.handleDetails}>More ..</button>
 

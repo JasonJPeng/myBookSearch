@@ -39,15 +39,19 @@ class App extends Component {
       <div className="App">
     
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          <h2>Welcome to Google Book Search</h2>
         </div>
-        <p className="App-intro">
+        {/* <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        </p> */}
        
         <Search updateBooks =  {this.updateBooks} updateStatus = {this.updateStatus}/>
-        <Results bookList = {this.state.books} updateDetails = {this.updateDetails} />
+        <Results 
+            bookList = {this.state.books} 
+            updateDetails = {this.updateDetails} 
+            onBookShelf = {this.state.onBookShelf}  
+        />
         <Details 
             bookInfo = {this.state.bookInfo} 
             onBookShelf = {this.state.onBookShelf}

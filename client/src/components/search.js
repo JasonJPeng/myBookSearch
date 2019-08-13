@@ -40,13 +40,21 @@ class Search extends Component {
 
     render() {
         return(
-            <div>
-                <p>Title:</p>
-                <input name = "title" type="text" onChange={this.handleInput}></input>
-                <p>Author:</p>
-                <input name="author" type="text" onChange={this.handleInput}></input>
-                <button type="button" onClick={this.handleSearch}>Search Google</button>
-                <button type="button" onClick={this.handleMyBooks}>Search My Bookshelf</button>
+            <div id="search">
+                <div id="searchGoogle">
+                <button type="button" onClick={this.handleSearch}>Google Books</button>
+                <input name = "title" type="text" placeholder = "title"
+                   onChange={this.handleInput}
+                />
+                
+                <input name="author" type="text" placeholder = "author"
+                   onChange={this.handleInput}
+                />
+                
+                </div>
+                <div id="bookShelf">
+                <button type="button" onClick={this.handleMyBooks}>My Bookshelf</button>
+                </div>
             </div>
         )
     }

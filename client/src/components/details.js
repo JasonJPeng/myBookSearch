@@ -23,7 +23,7 @@ class xxx extends Component {
 
     render() {
         return(
-        <div>
+        <div id="details">
             {!this.props.bookInfo.id ? <span>No Data</span> : 
             <div>
                 <h2>{this.props.bookInfo.volumeInfo.title}</h2>

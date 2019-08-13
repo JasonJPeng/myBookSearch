@@ -3,3 +3,27 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+#results, #details {
+  /* border: 2px solid red; */
+  float: left;
+  margin: 5px 0px;
+  padding:10px;
+  width: 50%;
+  text-align: left;
+}
+
+#search {
+  /* border: 2px solid blue; */
+  padding:20px;
+  height:50px;
+  text-align: left;
+}
+
+#searchGoogle,  #bookShelf {
+  margin:5px;
+}
