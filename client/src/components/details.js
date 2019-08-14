@@ -4,12 +4,15 @@ import API from "../API.js";
 class xxx extends Component {
    // is book in savedBook ?  
     isSaved (book) {  
-       
-        if (this.props.savedBooks.length>=1) {
-            return (this.props.savedBooks.map(x=>x.id===book.id)).reduce((a,b)=>a||b);
-        } else {
-            return false;
-        }
+       if (this.props.onBookShelf) return true;
+       else return false;
+
+    // Heroku problem -----    
+        // if (this.props.savedBooks.length>=1) {
+        //     return (this.props.savedBooks.map(x=>x.id===book.id)).reduce((a,b)=>a||b);
+        // } else {
+        //     return false;
+        // }
     }
     
     
