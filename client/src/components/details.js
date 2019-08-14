@@ -3,12 +3,12 @@ import API from "../API.js";
 
 class xxx extends Component {
    // is book in savedBook ?  
-    isSaved (book) {    
-       if (!this.props.savedBooks || this.props.savedBooks.length === 0 ) {
-           return false;
-       } else {    
-        //    return (this.props.savedBooks.reduce( (a,b)=> (a.id===thisId) || (b.id===thisId)))    
-              return (this.props.savedBooks.map(x=>x.id===book.id)).reduce((a,b)=>a||b)
+    isSaved (book) {  
+       
+        if (this.props.savedBooks.length>=1) {
+            return (this.props.savedBooks.map(x=>x.id===book.id)).reduce((a,b)=>a||b);
+        } else {
+            return false;
         }
     }
     
