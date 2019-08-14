@@ -47,7 +47,7 @@ class xxx extends Component {
             {!this.props.bookInfo.id ? <span className="sub">No Book Data</span> : 
             <div>
                 <h2 className="sub">{this.props.bookInfo.volumeInfo.title}</h2>
-                <h3 className="sub">{this.props.bookInfo.volumeInfo.subtitle}</h3> 
+                <h4 className="sub">{this.props.bookInfo.volumeInfo.subtitle}</h4> 
                 <span className="BookAuthor"> ~ {this.props.bookInfo.volumeInfo.authors}</span>
                 <div>{ 
                 this.isSaved(this.props.bookInfo)? 
