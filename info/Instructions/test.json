@@ -1,0 +1,53 @@
+{
+"id": "pQNGvQEACAAJ",
+"title": "Moby Dick (100 Copy Limited Edition)",
+"item":{
+"kind": "books#volume",
+"id": "pQNGvQEACAAJ",
+"etag": "uiGBysQsUgw",
+"selfLink": "https://www.googleapis.com/books/v1/volumes/pQNGvQEACAAJ",
+"volumeInfo": {
+"title": "Moby Dick (100 Copy Limited Edition)",
+"authors": [
+"Herman Melville"
+],
+"publisher": "SF Classic",
+"publishedDate": "2018-11-13",
+"description": "A sailor called Ishmael narrates the obsessive quest of Ahab, captain of the whaler Pequod, for revenge on Moby Dick, a white whale which on a previous voyage destroyed Ahab's ship and severed his leg at the knee. Moby Dick's reputation grew during the 20th century. D. H. Lawrence called it \"the greatest book of the sea ever written.\"",
+"industryIdentifiers": [
+{
+"type": "ISBN_10",
+"identifier": "1772265764"
+},
+{
+"type": "ISBN_13",
+"identifier": "9781772265767"
+}
+],
+"readingModes": {
+"text": false,
+"image": false
+},
+"pageCount": 552,
+"printType": "BOOK",
+"categories": [
+"Fiction"
+],
+"maturityRating": "NOT_MATURE",
+"allowAnonLogging": false,
+"contentVersion": "preview-1.0.0",
+"panelizationSummary": {
+"containsEpubBubbles": false,
+"containsImageBubbles": false
+},
+"imageLinks": {
+"smallThumbnail": "http://books.google.com/books/content?id=pQNGvQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+"thumbnail": "http://books.google.com/books/content?id=pQNGvQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+},
+"language": "en",
+"previewLink": "http://books.google.com/books?id=pQNGvQEACAAJ&dq=moby-dick&hl=&cd=1&source=gbs_api",
+"infoLink": "http://books.google.com/books?id=pQNGvQEACAAJ&dq=moby-dick&hl=&source=gbs_api",
+"canonicalVolumeLink": "https://books.google.com/books/about/Moby_Dick_100_Copy_Limited_Edition.html?hl=&id=pQNGvQEACAAJ"
+}
+}
+}
