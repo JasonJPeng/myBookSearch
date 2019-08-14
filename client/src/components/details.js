@@ -44,29 +44,27 @@ class xxx extends Component {
     render() {
         return(
         <div id="details">
-            {!this.props.bookInfo.id ? <span>No Data</span> : 
+            {!this.props.bookInfo.id ? <span className="sub">No Book Data</span> : 
             <div>
-                <h2>{this.props.bookInfo.volumeInfo.title}</h2>
-                <h3>{this.props.bookInfo.volumeInfo.subTitle}</h3> 
+                <h2 className="sub">{this.props.bookInfo.volumeInfo.title}</h2>
+                <h3 className="sub">{this.props.bookInfo.volumeInfo.subTitle}</h3> 
+                <span className="BookAuthor"> ~ {this.props.bookInfo.volumeInfo.authors}</span>
                 <div>{ 
                 this.isSaved(this.props.bookInfo)? 
-                <div><h3>Already in my bookshelf </h3>
+                <div><h4 className="warning">Already in my bookshelf </h4>
                     <button onClick={this.handleRemove}>Remove from my bookshelf</button>
                 </div> : 
-                <div><h3>New </h3>
+                <div><h4 className="warning">New </h4>
                     <button onClick={this.handleSave}>Save to my bookshelf</button>
                 </div> 
                 }</div>
 
-                {/*               
-                {this.props.onBookShelf?
-                <button onClick={this.handleRemove}>Remove from my bookshelf</button> :
-                <button onClick={this.handleSave}>Save to my bookshelf</button>
-                } */}
+               <img className="SearchImg" src = {this.props.bookInfo.volumeInfo.imageLinks.thumbnail} alt=""/> 
 
-                ({this.props.bookInfo.id})
+
                 <p>{this.props.bookInfo.volumeInfo.description}</p>
-                <img src = {this.props.bookInfo.volumeInfo.imageLinks.thumbnail} alt=""/>              
+                <a href={this.props.bookInfo.volumeInfo.previewLink} target ="_blank"> Preview</a>
+                             
             </div>
             }     
          </div>

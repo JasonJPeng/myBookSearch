@@ -12,7 +12,7 @@ body {
   /* border: 2px solid red; */
   float: left;
   margin: 5px 0px;
-  padding:10px;
+  padding:10px 20px 0 10px;
   width: 50%;
   text-align: left;
 }
@@ -20,8 +20,9 @@ body {
 #search {
   /* border: 2px solid blue; */
   padding:20px;
-  height:50px;
+  height:80px;
   text-align: left;
+  background-color: azure;
 }
 
 #searchGoogle,  #bookShelf {
@@ -64,6 +65,20 @@ img {
   object-fit: cover;
 }
 .sub {
+  padding: 5px;
   font-size: 14pt;
   color: cadetblue;
+}
+
+.warning{
+  color: darkgoldenrod
+}
+
+button, input {
+  font-size: 12pt;
+  color: darkcyan;
+  margin:5px;
+}
+a {
+  font-size: 8pt;
 }
