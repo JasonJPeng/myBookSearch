@@ -6,6 +6,7 @@ import Details from "./components/details.js";
 import Footer from "./components/footer.js";
 import API from "./API.js";
 import "./App.css";
+import { SSL_OP_ALL } from "constants";
 
 class App extends Component {
   
@@ -23,10 +24,34 @@ class App extends Component {
     })
   }
 
+  fixBookData = (books) => {
+    let fixedBooks = [];
+    books.forEach(function(e){
+// 1. some have no description property      
+      if (!e.volumeInfo.hasOwnProperty("description")) {
+        e.volumeInfo.description = " " 
+      }
+      
+      if (!e.volumeInfo.hasOwnProperty("imageLinks")) {
+        e.volumeInfo.imageLinks = {smallThumbnail: ""}
+      } else {
+          if (!e.volumeInfo.imageLinks.hasOwnProperty("smallThumbnail")) {
+           e.volumeInfo.imageLinks.smallThumbnail = " " 
+          }
+      }
+
+
+      fixedBooks.push(e);
+      
+    })
+    return fixedBooks;
+  }
+
   updateBooks = (books) => {
     console.log(books)
-    this.setState({books: books})
-    console.log("=======+++++ ", this.state.books)
+    let fixedBooks = this.fixBookData(books)
+    this.setState({books: fixedBooks})
+    
   }
 
   updateDetails = (ind) => {

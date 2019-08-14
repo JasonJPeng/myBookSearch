@@ -16,24 +16,23 @@ class xxx extends Component {
             // <div>===== {this.props.bookList.length} =======</div>
             <div id="results">
                 {this.props.onBookShelf?
-                   <h2> {this.props.bookList.length} books in my bookshelf</h2> :
-                   <h2> {this.props.bookList.length} books found in Google Books Search  </h2>
+                   <h2 className="sub"> {this.props.bookList.length} books in my bookshelf</h2> :
+                   <h2 className="sub">> {this.props.bookList.length} books found in Google Books Search  </h2>
                 } 
             
                     {this.props.bookList.map((x, ind)=> (<div key={ind.toString()}>
-                        <button name={ind.toString()} onClick={this.handleDetails}>details</button>
-
-                        {/* <img src=
-                            {x.volumeInfo.imageLinks.smallThumbnail? x.volumeInfo.imageLinks.smallThumbnail: ""}
-                             alt=""/> */}
-
-  
-                        {x.volumeInfo.title} 
-                        {/* {x.volumeInfo.subtitle} */}
-                        {/* author: {x.volumeInfo.authors.map((y, indY)=>(
-                            <div key={indY.toString() + x.id}> {y} </div>
-                        ))}  */}
-                            <hr></hr>
+                            
+                            <div class="SearchSummary"> 
+                            <img class="SearchImg" src= {x.volumeInfo.imageLinks.smallThumbnail} height="100"/>
+                                <span class="BookTitle">{x.volumeInfo.title}</span>
+                                <span className="BookAuthor"> ~ {x.volumeInfo.authors}</span>
+                                <span>{x.volumeInfo.description.substring(0,300)}</span>
+                                <span>
+                                <a href={x.volumeInfo.previewLink} target ="_blank"> Preview</a>
+                                <button name={ind.toString()} onClick={this.handleDetails}>details</button>
+                                </span>
+                            </div>
+                        
                         </div>                        
                     ))}
            </div>

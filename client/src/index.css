@@ -27,3 +27,43 @@ body {
 #searchGoogle,  #bookShelf {
   margin:5px;
 }
+
+.SearchSummary span {
+  /* border: 2px solid green; */
+  margin: 3px;
+  display:block;
+}
+
+.SearchSummary {
+  float: left;
+  display: block;
+  margin:10px;
+  width: 100%;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-color: cadetblue;
+
+}
+
+.SearchImg {
+  float: left;
+  display: block;
+  margin:10px;
+}
+
+
+.BookTitle {
+  font-weight: bold;
+}
+
+.BookAuthor {
+  font-style: italic;
+}
+
+img {
+  object-fit: cover;
+}
+.sub {
+  font-size: 14pt;
+  color: cadetblue;
+}
